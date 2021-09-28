@@ -1,1 +1,11 @@
+This code was intended to relate the output trajectories (positions and forces) to the DFT-level calculation of the vertical energy gap (VEG). 
+
+This is done in several steps, each with its own Jupyter notebook:
+
+    [1] (Generate NN Features) - Compute the features to feed into the ANN. Normalize the training data and apply these normalization factors to the test data. 
+    [2] (Run NN) - Create the ANN (define architecture, hyperparameters) and train the model. Visualize weights, compare to expected (DFT) VEG distributions.
+
+
+##Useful Scripts for managing data
+
 mkdir POS_FRAMES/; mkdir FRC_FRAMES; t=0;for i in restart.*out ; do ./restart_2_ML_POS_frame.scp ${i}; mv ML_${i} POS_FRAMES/POS_frame_${t};./restart_2_ML_FRC_frame.scp ${i}; mv ML_${i} FRC_FRAMES/FRC_frame_${t}; t=$(eval echo "$t + 1" | bc); done
