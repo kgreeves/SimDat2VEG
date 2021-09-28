@@ -1,0 +1,1 @@
+mkdir POS_FRAMES/; mkdir FRC_FRAMES; t=0;for i in restart.*out ; do ./restart_2_ML_POS_frame.scp ${i}; mv ML_${i} POS_FRAMES/POS_frame_${t};./restart_2_ML_FRC_frame.scp ${i}; mv ML_${i} FRC_FRAMES/FRC_frame_${t}; t=$(eval echo "$t + 1" | bc); done
